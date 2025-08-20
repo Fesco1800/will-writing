@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Elements</title>
+
+    <!-- Bootstrap 4.0.0 -->
+    <link rel="stylesheet" type="text/css" href="assets/third-party/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <!-- Font Awesome 5.0.8 -->
+    <link rel="stylesheet" type="text/css" href="assets/third-party/font-awesome/5.0.8/web-fonts-with-css/css/fontawesome-all.min.css"/>
+    <!-- jQuery UI 1.12.1-->
+    <link rel="stylesheet" type="text/css" href="assets/third-party/jquery-ui/1.12.1/jquery-ui.min.css"/>
+    <!-- TOAST style -->
+    <link rel="stylesheet" type="text/css" href="assets/third-party/toast/1.3.1/src/jquery.toast.css">
+    <!-- Bootstrap Select style -->
+    <link rel="stylesheet" type="text/css" href="assets/third-party/bootstrap-select/1.13.0/css/bootstrap-select.min.css">
+
+    <!-- custom bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css"/>
+    <!-- theme css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/theme.css"/>
+
+    <!-- REVOLUTION SETTINGS STYLES 5.1.6 -->
+    <link rel="stylesheet" type="text/css" href="assets/third-party/revolution/5.1.6/css/settings.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/third-party/revolution/5.1.6/css/layers.css"/>
+
+    <!-- jQuery 3.2.0 -->
+    <script src="assets/third-party/jquery/3.2.0/jquery-3.2.0.min.js"></script>
+    <!-- Popper script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.js"></script>
+    <!-- bootstrap script 4.0.0 -->
+    <script src="assets/third-party/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <!-- REVOLUTION SETTINGS STYLES 5.1.6 -->
+    <script src="assets/third-party/revolution/5.1.6/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="assets/third-party/revolution/5.1.6/js/extensions/revolution.extension.parallax.min.js"></script>
+    <!-- Custom Slider -->
+    <script src="assets/js/revo-settings.js"></script>
+    <!-- For Maps -->
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwr50oLLrPjw6-c6YZDTXF5gUWaj68j-g&"></script>
+    <script>
+function initialize(lat,lng, title, description, index) {
+  var center = window.innerWidth > 767 ? (lng - 0.01) : lng;
+
+  var mapCanvas = document.getElementById('map_canvas_'+index);
+  var myLatlng = new google.maps.LatLng(lat, lng);
+  var mapOptions = {
+    center: myLatlng,
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    gestureHandling: 'cooperative',
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+      style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+      position: google.maps.ControlPosition.TOP_RIGHT
+    },
+  }
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var contentString = "<body><b>"+title+"</b><p>"+description+"</p></body>";
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map
+  });
+  google.maps.event.addListener(infowindow, 'domready', function() {
+  });
+  infowindow.open(map,marker);
+}
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="custom theme">
+    <header class="container-fluid header index">
+      <div class="row">
+        <div class="sps container-fluid bwhite cmineshaft bottom">
+          <div class="container">
+            <nav class="navbar navbar-expand-xl navbar-light">
+              <a class="navbar-brand invisible" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="ml-auto navbar-nav text-uppercase t16 cblack no-trans">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="services.html">Office Rent</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="blog.html">Computer & Table</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="nav-item">|</li>
+                  <li class="nav-item">
+                    <form data-toggle="collapse" id="search-form" class="trans search form-inline collapse">
+                      <input class="field trans form-control" placeholder="Find and Hit Enter..." type="text">
+                    </form>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#search-form">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div> 
+        </div> 
+      </div>
+    </header>
+
+    <div class="crumb bwhisper-f7f8fb container-fluid">
+      <div class="row">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <ul class="poppins-r t14 breadcrumb list-inline">
+                <li class="list-inline-item"><a href="index.html">Home</a></li>
+                <li class="list-inline-item">/</li>
+                <li class="list-inline-item"><a href="elements.html">Elements</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="elements container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="poppins-l t14 cmineshaft-333 bg-block col-12">
+            <h4 class="h1 nexa-b t36 cblack">H1: Lorem ipsum dolor sit amet</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+            <h4 class="h2 nexa-b t32 cblack">H2: Lorem ipsum dolor sit amet</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+            <h4 class="h3 nexa-b t28 cblack">H3: Lorem ipsum dolor sit amet</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+            <h4 class="h4 nexa-b t24 cblack">H4: Lorem ipsum dolor sit amet</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+            <h5 class="h5 nexa-b t20 cblack">H5: Lorem ipsum dolor sit amet</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+            <h6 class="h6 nexa-b t16 cblack">H6: Lorem ipsum dolor sit amet</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+            <ul class="nexa-b t16 cmineshaft-333 list-unstyled">
+              <li><i class="cshakespeare fas fa-check"></i>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li><i class="cshakespeare fas fa-check"></i>Proin iaculis leo non tellus finibus mollis</li>
+              <li><i class="cshakespeare fas fa-check"></i>Praesent tortor odio, cursus vel massa vitae, venenatis</li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin iaculis leo non tellus finibus mollis. Praesent tortor odio, cursus vel massa vitae, venenatis sodales velit. Mauris commodo vehicula fermentum. Pellentesque venenatis viverra blandit. Nunc aliquam congue risus, quis sodales tellus posuere quis. Etiam mollis est ac nunc sodales, et convallis sapien imperdiet. Vestibulum nec risus nec tortor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bwhite">
+      <div class="top cmineshaft-333 container">
+        <div class="row">
+          <div class="poppins-l t14 outer-left col-12 col-sm-6 col-md-6 col-lg-3">
+            <div class="col-12">
+              <p>Quisque placerat mauris nec imperdiet accumsan. Donec ultricies pulvinar mi, sed vehicula ligula.</p>
+              <ul class="social list-unstyled">
+                <li class="list-inline-item"><i class="fab fa-facebook-f"></i></li>
+                <li class="list-inline-item"><i class="fab fa-twitter"></i></li>
+                <li class="list-inline-item"><i class="fab fa-google-plus-g"></i></li>
+                <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
+              </ul>
+            </div>
+          </div>
+          <div class="inner-left col-12 col-sm-6 col-md-6 col-lg-3">
+            <h4 class="title nexa-b t18">Useful Links</h4>
+            <ul class="poppins-r t14 list col-12">
+              <li><a href="#">Why You Need A Will</a></li> 
+              <li><a href="#">Our Services</a></li> 
+              <li><a href="#">How It Works</a></li> 
+            </ul>
+          </div>
+          <div class="inner-right col-12 col-sm-6 col-md-6 col-lg-3">
+            <h4 class="title nexa-b t18">Latest News</h4>
+            <ul class="list list-unstyled col-12">
+              <li>
+                <div class="row">
+                  <div class="left">
+                    <div class="picture">
+                      <img class="img-responsive" src="assets/images/home/news.png" alt="title" />
+                    </div>
+                  </div>
+                  <div class="right d-flex flex-column justify-content-center">
+                    <div class="d-flex align-items-center">
+                      <h5 class="sub nexa-b t14"><a href="#">Lorem Ipsum Dolor</a></h5>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <h6 class="date poppins-r t14">June 25, 2018</h6>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="left">
+                    <div class="picture">
+                      <img class="img-responsive" src="assets/images/home/news.png" alt="title" />
+                    </div>
+                  </div>
+                  <div class="right d-flex flex-column justify-content-center">
+                    <div class="d-flex align-items-center">
+                      <h5 class="sub nexa-b t14"><a href="#">Lorem Ipsum Dolor</a></h5>
+                    </div>
+                    <div class="d-flex align-items-center">
+                      <h6 class="date poppins-r t14">June 25, 2018</h6>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="outer-right col-12 col-sm-6 col-md-6 col-lg-3">
+            <h4 class="title nexa-b t18">Newsletter</h4>
+            <div class="newsletter">
+              <div class="form-group col-12">
+                <input class="field poppins-r t14 cmineshaft-333 form-control" placeholder="Email" type="text">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom cmineshaft-333 container-fluid">
+        <div class="container">
+          <div class="poppins-l t14 row">
+            <div class="col-12 col-md-6">
+              <p>Copyright @copyright 2018 Will Writing. All Rights Reserved.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <ul class="poppins-l t14 foot-links float-right list-inline">
+                <li class="list-inline-item"><a href="#">About Us</a></li>
+                <li class="list-inline-item"><a href="#">Terms & Conditions</a></li>
+                <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                <li class="list-inline-item"><a href="#">COntact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Contact form script -->
+    <script>
+var baseURL = "";
+    </script>
+    <!-- Toast Script 1.3.1 -->
+    <script src="assets/third-party/toast/1.3.1/src/jquery.toast.js"></script>
+    <!-- ScrollpostStyler 0.7.0 -->
+    <script src="assets/third-party/scrollPosStyler/0.7.0/scrollPosStyler.js"></script>
+    <!-- jQuery UI datepicker -->
+    <script src="assets/third-party/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Bootstrap Selectpicker -->
+    <script src="assets/third-party/bootstrap-select/1.13.0/js/bootstrap-select.min.js"></script>
+    <!-- Google Capcha  -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- Custom scripts in one -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
